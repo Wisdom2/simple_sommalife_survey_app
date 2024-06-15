@@ -41,6 +41,7 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
+        'password' => 'hashed',
         'email_verified_at' => 'datetime',
         'uuid' => EfficientUuid::class,
     ];
