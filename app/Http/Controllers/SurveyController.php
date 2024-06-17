@@ -89,7 +89,7 @@ class SurveyController extends Controller
 
     public function result(string $surveyId)
     {
-        $survey = Survey::whereUuid($surveyId)->first();
+        $survey = Survey::whereUuid($surveyId)->with(['questionnaire.questions.answers.responses'])->first();
 
         throw_if(
             blank( $survey ),

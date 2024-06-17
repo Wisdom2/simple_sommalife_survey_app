@@ -27,22 +27,23 @@ class QuestionAnswerResource extends JsonResource
 
     private function transformAnswers($questiontype)
     {
-        if ( in_array($questiontype->type, ['radio', 'checkbox'] ) ) {
-
-            return  AnswerSurveyResponseResource::collection($this->answers);
-        } 
-        else if( $questiontype->type == 'image') {
+        if (in_array($questiontype->type, ['radio', 'checkbox'])) {
+            return AnswerSurveyResponseResource::collection($this->answers);
+        } elseif ($questiontype->type == 'image') {
             return [
+                [
                     'id' => $this->answers->first()->uuid,
-                    'value' => config('services.storage_url'). Arr::get($this->answers->first(), 'responses.0.value'),
-                ];
-        }         
+                    'value' => config('services.storage_url') . Arr::get($this->answers->first(), 'responses.0.value'),
+                ]
+            ];
+        }
 
         return [
-            'id' => $this->answers->first()->uuid,
-            'value' => Arr::get($this->answers->first(), 'responses.0.value'),
+            [
+                'id' => $this->answers->first()->uuid,
+                'value' => Arr::get($this->answers->first(), 'responses.0.value'),
+            ]
         ];
-
-       
     }
+ 
 }

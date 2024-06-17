@@ -14,18 +14,20 @@ class AnswerSurveyResponseResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $response = $this->responses()->first();
+
         $data['answer'] = [
             'id' => $this->uuid,
             'answer' => $this->answer,
         ];
-
-        if( ! blank( $this->responses()->first()?->answer ) ) {
+    
+        if (!blank($response)) {
             $data['response'] = [
-                'id' => $this->responses()->first()?->uuid,
-                'value' => $this->responses()->first()?->answer->answer
+                'id' => $response->uuid,
+                'value' => $response->answer->answer ?? ''
             ];
         }
-
+    
         return $data;
     }
 }
