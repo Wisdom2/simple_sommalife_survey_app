@@ -3,12 +3,13 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Questionnaire;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
+use Dyrynda\Database\Casts\EfficientUuid;
+use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
-use Dyrynda\Database\Support\GeneratesUuid;
-use Dyrynda\Database\Casts\EfficientUuid;
 
 class User extends Authenticatable
 {
@@ -45,4 +46,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'uuid' => EfficientUuid::class,
     ];
+
+    public function questionnaires()
+    {
+        return $this->hasMany(Questionnaire::class);
+    }
 }
