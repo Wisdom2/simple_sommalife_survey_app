@@ -100,7 +100,7 @@ class SurveyController extends Controller
         return response()->json([
             'status' => 200,
             'data' => new SurveyResultResource( $survey ),
-            'message' => 'Questionnaire retrieved successfully',
+            'message' => 'Survey retrieved successfully',
         ]);
     }
 
