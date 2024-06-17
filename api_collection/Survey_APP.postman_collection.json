@@ -1,0 +1,889 @@
+{
+	"info": {
+		"_postman_id": "257053b1-b23d-44c8-a2d4-e2ba5bc06d48",
+		"name": "Survey_APP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26073529",
+		"_collection_link": "https://bold-zodiac-519266-1.postman.co/workspace/sommalife~e9096d2c-ee04-4e1a-a032-e142dad95f53/collection/26073529-257053b1-b23d-44c8-a2d4-e2ba5bc06d48?action=share&source=collection_link&creator=26073529"
+	},
+	"item": [
+		{
+			"name": "Survey Configuration",
+			"item": [
+				{
+					"name": "Questionnaires",
+					"item": [
+						{
+							"name": "Get User Questionnaires",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/v1/questionnaires",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"questionnaires"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get User Questionnaires",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseURL}}/api/v1/questionnaires",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"questionnaires"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"data\": [\n        {\n            \"id\": \"50c959c5-5fee-4203-a038-92dd9c09230b\",\n            \"title\": \"Hello World 4\",\n            \"description\": \"some random info\",\n            \"publicly_share_url\": \"http://127.0.0.1:8000/api/v1/surveys/questionnaires/50c959c5-5fee-4203-a038-92dd9c09230b\"\n        },\n        {\n            \"id\": \"ad25dd43-8944-4fac-bef4-5bf62924ba32\",\n            \"title\": \"Hello World 3\",\n            \"description\": \"some random info\",\n            \"publicly_share_url\": \"http://127.0.0.1:8000/api/v1/surveys/questionnaires/ad25dd43-8944-4fac-bef4-5bf62924ba32\"\n        },\n        {\n            \"id\": \"dc4c93ec-afdd-467c-8f31-f7b8e24c19fb\",\n            \"title\": \"From the rising of the sun here 2\",\n            \"description\": \"flex your muscle\",\n            \"publicly_share_url\": \"http://127.0.0.1:8000/api/v1/surveys/questionnaires/dc4c93ec-afdd-467c-8f31-f7b8e24c19fb\"\n        },\n        {\n            \"id\": \"b7714e33-74f8-4c0d-b84f-0182bbbf5b18\",\n            \"title\": \"Hello World\",\n            \"description\": \"some random info\",\n            \"publicly_share_url\": \"http://127.0.0.1:8000/api/v1/surveys/questionnaires/b7714e33-74f8-4c0d-b84f-0182bbbf5b18\"\n        }\n    ],\n    \"pagination\": {\n        \"current_page\": 1,\n        \"next_page_url\": null,\n        \"prev_page_url\": null,\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/questionnaires?page=1\",\n        \"last_page_url\": \"http://127.0.0.1:8000/api/v1/questionnaires?page=1\",\n        \"per_page\": 15,\n        \"last_page\": 1,\n        \"total\": 4\n    },\n    \"message\": \"Questionnaire(s) retrieved successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Questionnaire",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/v1/questionnaires/:questionnaire-id",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"questionnaires",
+										":questionnaire-id"
+									],
+									"variable": [
+										{
+											"key": "questionnaire-id",
+											"value": "50c959c5-5fee-4203-a038-92dd9c09230b"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Questionnaire",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseURL}}/api/v1/questionnaires/b7714e33-74f8-4c0d-b84f-0182bbbf5b18",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"questionnaires",
+												"b7714e33-74f8-4c0d-b84f-0182bbbf5b18"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"id\": \"b7714e33-74f8-4c0d-b84f-0182bbbf5b18\",\n        \"title\": \"Hello World\",\n        \"description\": \"some random info\"\n    },\n    \"message\": \"Questionnaire created successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create Questionnaire",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Hello checkbox\",\r\n    \"description\": \"some random info\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/questionnaires",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"questionnaires"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Questionnaire",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"Hello World 2\",\r\n    \"description\": \"some random info\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}/api/v1/questionnaires",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"questionnaires"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"id\": \"ad25dd43-8944-4fac-bef4-5bf62924ba32\",\n        \"title\": \"Hello World 3\",\n        \"description\": \"some random info\"\n    },\n    \"message\": \"Questionnaire created successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Questionnaire",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"From the rising of the sun here 2\",\r\n    \"description\": \"flex your muscle\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/questionnaires/:questionnaire-id",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"questionnaires",
+										":questionnaire-id"
+									],
+									"variable": [
+										{
+											"key": "questionnaire-id",
+											"value": "dc4c93ec-afdd-467c-8f31-f7b8e24c19fb"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Questionnaire",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"From the rising of the sun here\",\r\n    \"description\": \"flex your muscle\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}/api/v1/questionnaires/dc4c93ec-afdd-467c-8f31-f7b8e24c19fb",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"questionnaires",
+												"dc4c93ec-afdd-467c-8f31-f7b8e24c19fb"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"id\": \"dc4c93ec-afdd-467c-8f31-f7b8e24c19fb\",\n        \"title\": \"From the rising of the sun here\",\n        \"description\": \"flex your muscle\"\n    },\n    \"message\": \"Questionnaire updated successfully\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Question Types",
+					"item": [
+						{
+							"name": "Get Types",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/v1/types",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"types"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Types",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseURL}}/api/v1/questionnaires",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"questionnaires"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"data\": [\n        {\n            \"id\": \"dad5621d-9098-437d-aefb-602c761ede24\",\n            \"type\": \"text\",\n            \"display_name\": \"Text\"\n        },\n        {\n            \"id\": \"d3623182-5248-4cec-a5af-ce9f2c90355c\",\n            \"type\": \"single_choice\",\n            \"display_name\": \"Single Choice\"\n        },\n        {\n            \"id\": \"feb82bf6-33c1-4355-ba52-1385792ceac5\",\n            \"type\": \"multiple_choice\",\n            \"display_name\": \"Multiple Choice\"\n        },\n        {\n            \"id\": \"5a413f78-f072-4772-8225-e7f0132f4df5\",\n            \"type\": \"image\",\n            \"display_name\": \"Image\"\n        }\n    ],\n    \"message\": \"Types retrieved successfully\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Questions",
+					"item": [
+						{
+							"name": "Create Question",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"questionnaire_id\": \"1d3298a1-589c-4165-9e41-546e8a509f2b\",\r\n    \"question\": \"Select option\",\r\n    \"question_type_id\": \"914d0da5-6a7e-4da1-a927-0d5859ba761d\",\r\n    \"answers\": [\"Warm\", \"Cold\", \"humid\", \"normal\"]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/questionnaire/questions",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"questionnaire",
+										"questions"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Question",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"questionnaire_id\": \"50c959c5-5fee-4203-a038-92dd9c09230b\",\r\n    \"question\": \"What is the weather now\",\r\n    \"question_type_id\": \"2ef5d3fc-b2c0-4e0b-a9ef-6d00412b5111\",\r\n    \"answers\": [\"Warm\", \"Cold\"]\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}/api/v1/questionnaire/questions",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"questionnaire",
+												"questions"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"id\": \"ffa0e941-6fc8-4f7a-a644-1ca547e33dc5\",\n        \"question\": \"What is the weather now\",\n        \"created_at\": \"2024-06-16 01:54:20 am\",\n        \"updated_at\": \"2024-06-16 01:54:20 am\",\n        \"type\": {\n            \"id\": \"2ef5d3fc-b2c0-4e0b-a9ef-6d00412b5111\",\n            \"type\": \"radio\",\n            \"display_name\": \"Single Choice\"\n        },\n        \"answers\": [\n            {\n                \"id\": \"5db7e8cd-ab27-46ee-b4e0-ff291fc574c9\",\n                \"answer\": \"Warm\"\n            },\n            {\n                \"id\": \"fdf1242a-0a53-43f9-b48c-40d87fdb3a0a\",\n                \"answer\": \"Cold\"\n            }\n        ]\n    },\n    \"message\": \"Question created successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Question",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/questionnaires/:questionnaire-id/questions/:question-id",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"questionnaires",
+										":questionnaire-id",
+										"questions",
+										":question-id"
+									],
+									"variable": [
+										{
+											"key": "questionnaire-id",
+											"value": "1d3298a1-589c-4165-9e41-546e8a509f2b"
+										},
+										{
+											"key": "question-id",
+											"value": "841686ee-d314-4c78-a47e-cce15a84733e"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Question (Text)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"questionnaire_id\": \"1d3298a1-589c-4165-9e41-546e8a509f2b\",\r\n    \"question\": \"Sup?\",\r\n    \"question_type_id\": \"54a6a743-f78a-49ed-a9b1-c00bef4d0121\",\r\n    \"answers\": \"\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/questionnaire/questions",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"questionnaire",
+										"questions"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Question (Text)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"questionnaire_id\": \"50c959c5-5fee-4203-a038-92dd9c09230b\",\r\n    \"question\": \"What is your name\",\r\n    \"question_type_id\": \"54a6a743-f78a-49ed-a9b1-c00bef4d0121\",\r\n    \"answers\": \"\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}/api/v1/questionnaire/questions",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"questionnaire",
+												"questions"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"id\": \"1d7a709c-64f3-417d-8c70-d9bda3384fbb\",\n        \"question\": \"What is your name\",\n        \"created_at\": \"2024-06-16 01:54:30 am\",\n        \"updated_at\": \"2024-06-16 01:54:30 am\",\n        \"type\": {\n            \"id\": \"54a6a743-f78a-49ed-a9b1-c00bef4d0121\",\n            \"type\": \"text\",\n            \"display_name\": \"Text\"\n        },\n        \"answers\": \"\"\n    },\n    \"message\": \"Question created successfully\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Survey",
+			"item": [
+				{
+					"name": "Get Survey Questionnaire",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/surveys/questionnaires/:questionnaire-id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"surveys",
+								"questionnaires",
+								":questionnaire-id"
+							],
+							"variable": [
+								{
+									"key": "questionnaire-id",
+									"value": "d47b02cf-7d98-4907-8c3b-4b73592ee64c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Surveys",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/surveys/questionnaires",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"surveys",
+								"questionnaires"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Survey Result",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/surveys/:survey-id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"surveys",
+								":survey-id"
+							],
+							"variable": [
+								{
+									"key": "survey-id",
+									"value": "943cf781-ba04-48a6-816b-45f96d25ecb3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Take Survey",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"questionnaire_id\": \"1d3298a1-589c-4165-9e41-546e8a509f2b\",\r\n    \"responses\": [\r\n        {\r\n            \"question_id\": \"f7f696bf-425f-4384-96bc-9aca7615608d\",\r\n            \"answer_id\": [\r\n                \"a5843e13-faa8-48ce-873a-1ade85ef5867\",\r\n                \"78021c00-f43e-412e-b4b6-378850ac8ed5\",\r\n                \"aaf44032-0bca-447c-98fd-4f10d3ffb27f\"\r\n            ]\r\n        },\r\n        {\r\n            \"question_id\": \"9bb3b496-1f3d-4ef9-94ef-5356d0bf6979\",\r\n            \"answer_id\": \"23d7b01c-4419-4881-9a7d-fc920e5c3dee\",\r\n            \"meta\": {\r\n                \"value\": \"Cool things\"\r\n            }\r\n        }\r\n    ],\r\n    \"respondent\": {\r\n        \"name\": \"Dr. Strange\",\r\n        \"email\": \"john@you.com\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/surveys/questionnaires",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"surveys",
+								"questionnaires"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Take Survey",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"questionnaire_id\": \"1d3298a1-589c-4165-9e41-546e8a509f2b\",\r\n    \"responses\": [\r\n        {\r\n            \"question_id\": \"f7f696bf-425f-4384-96bc-9aca7615608d\",\r\n            \"answer_id\": [\r\n                \"a5843e13-faa8-48ce-873a-1ade85ef5867\",\r\n                \"78021c00-f43e-412e-b4b6-378850ac8ed5\",\r\n                \"aaf44032-0bca-447c-98fd-4f10d3ffb27f\"\r\n            ]\r\n        },\r\n        {\r\n            \"question_id\": \"9bb3b496-1f3d-4ef9-94ef-5356d0bf6979\",\r\n            \"answer_id\": \"23d7b01c-4419-4881-9a7d-fc920e5c3dee\",\r\n            \"meta\": {\r\n                \"value\": \"Cool things\"\r\n            }\r\n        }\r\n    ],\r\n    \"respondent\": {\r\n        \"name\": \"Dr. Strange\",\r\n        \"email\": \"john@you.com\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/surveys/questionnaires",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"surveys",
+										"questionnaires"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": [],\n    \"message\": \"Thank you for the survey !\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Take Survey Question type Image",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"questionnaire_id\": \"50c959c5-5fee-4203-a038-92dd9c09230b\",\r\n    \"responses\": [\r\n        {\r\n            \"question_id\": \"f4a26b07-4564-48e0-ab88-014375ff5bb8\",\r\n            \"answer_id\": \"69c84756-c7aa-4795-a839-f1b8cf9aafe9\",\r\n            \"meta\": {\r\n                \"value\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIREhUSExMWFhUWGB0WGRYVFxgXHRgXGxgXGBsbGxYYHSggGCAlGxkYITEtJykrLi4uGiAzPDMvNygtLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS8tLS0tLTUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAP0AxwMBEQACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYDBAcCAQj/xABHEAACAQMCAwUFBAYIBAYDAAABAgMABBESIQUGMRMiQVFhBzJScYEUI0KRU2JygpKhFSQzQ2OisdGTssHwFlSDlNLjFyU0/8QAGgEBAAIDAQAAAAAAAAAAAAAAAAQFAgMGAf/EADURAAICAQIEAwgBAwQDAQAAAAABAgMRBCEFEjFBE1FhIjJxgZGhsdHBFELxI0Ph8BVSYjP/2gAMAwEAAhEDEQA/AO40AoBQCgBoCtca574faSdjJODKOsUSvK49GWMHSenXHUV45JLLPUm+how+07hx99poh8UtvMq+J97SQOnjisVbCWykvqeuEl1RaOHcTguEEkEqSofxRsGH5g1mYm3QCgFAKAUBrcQv4oI2lldURRksxwB/ufTxoCvc/c0GytVaJdVxOwigRgR32GdTDGwQZY58gNs1jOahFyfRGUYuTwjlsnL6SsJbiSSW4zqM5kdX1bnuaThACdgNhtXNWcXuc8w2XkW0dDWo4l1LRyzzjPZSJb3shmtnISO6f34nJwqzt0ZTsA+xB97Y5FvotfHULD2l5fogajTOrfsdUBqwIwoBQCgFAKAUAoBQCgFAKA557T+a5YilhaOEuJlLyS/oIBsXz4Meg8sHpsa1XWqqDk/8mddbnLCKdweyEcf9Vt5ZFJyZF0AyE76y8zp2mfMZHlVHZo9XqXzWPHpn+EW1coQWK4t+pty3Bj/tUki9ZF7o8MGRSUByfiqHZw2+vdLPw/7k3ePHpLb4/swCwCSdtbu1vN+lhwM+PfT3ZR6MDXun4jdS8N5XkzXbpa7N+j9C5cve0DDLBfqsTsdKXC57GU+AJO8LnybY42PhXRabV16hez18u5VXUTqe/wBS+g1KNJ9oBQELzDzNBZgByXlYZSFMF2Hn5IuerNgeHXAOFlka480mZQg5PCKhwCwm4nOnEb1sW8Pft4QcRFxnEuGwXCjo7Y1HcBVA1IScllrAkktkVbj/ADFFe8TllMqCG0Bt4NTqNTn+2kGT6BQehAFVvFZWOtVwTeeuCXolFS5pNbGReJwHpNF/xE/3rnv6a7/1f0LTxYeaMk0STIyNhkYFSOuxpB2UzUsNNHslGxYLv7MOMtNbtbSnM1owiYk5LxEZhkPzXY+qNXY0Wq2tTXcoLIOEnFlzraYCgFAKAUAoBQCgFAKA+E0Bw/lbhn2+5ueKTnUk8p7KP8JjjJRGf4sBQADtlc9dOMJYJ2lpyuZl7rwsD4RnbzoeYIC+4F2Y12ygDqYBspH+H4Rt6e6fQktULV6GF6z0l5/sxWYbx6eX6IpGjnj6B0YEEMPoQynoQQQQdwRXNSjZp7MdJI3Jxsj6G/y5zDPw3TGdU9mNtJJaW3H6hO8qD4T3gOmcYq/0XFI2+zZs/Psysv0bj7UN0XG89o/CokDG8ibUAQsZMjnOMDQgLA7jYgVbkEr3Eee7q4yttEbaM/304BlI80h92P5uT+zVZqeJ1VbR3f2JlOjnPeWyKHx0r31cXMms5fsUd5JjuPvJyMEYwNIOwGOmBUSqydkvEbjn/wCmsL4L+WSJwjBcqTx6Lr8WYrmZXt2kkPeRPu4Z4L27csAQil5lWOLwGxYAZx5VOjFTft3Z9E0iNKTj7tePjuZIYLR8K9yGfoQGSHvA74VFVhuMdc1XWW6qDbhXt57v+WSlCqXvS/gkv6AtT3jErn4pCZTjr7zknxqFPX6ro5NfYkR01XZZNiDhcEZ1JDEp81jRT+YFaJau+SxKTwZxpgt0kSHKt99n4tAN9N3E8LDw1R/eox+mtf3qvODWZrlDyf5K/Xx9pSOv1cleKAUAoBQCgFAKAUAoCG50uzDYXcq+8lvKw8e8I2xt88UBTeVINFlbL5Qx+m5QE/zNYMuaVitErXhtFAKAqPMtv9mmW5XaKZhHMPBZDtHL6Z2Rv3T51X8Q0iur5l7y6fo083hTz2YrlyaaP9GospnjVRIww2w7w+eMqfUdfEHAxMjq5Sr8KxvH3X7XoaHSlLnitzeBqG0k8I3GG7vI4hqkdUGcZdgoz5b1nXTO14gsmMpxju2a1rxmCVlWOVH1A+6wJyN8Feu4yf3TUiejthBymmsfya43wlJKLM93IoMasARIxQAjO+hn/wBEP8qwp5nGTi2mkn19cGc8ZSfc1jwSAbopiPnCxj/NV7rfUGs1rrek8SXqs/fqYPTw7bfDY8mO6i91lnXyfEb/AEdRob6qvzrNS01vvJwfpuvp1PMWx6Pm+OzNVOKa7/hqqjJILtNSSjT3D3WIbOlsAnGCd8fKrbhendTk8pp9GiDrLVNJYwzud9xJYZII2BzPIYlIxgMIpJd8npiMjbxIq4IBvUAoBQCgFAKAUAoBQFZ9pjMOFXukZPYP+WO9/lzQEPYf2Uf7C/8AKK1l3D3UbFDMUAoDT4xw9bmCWBukiFfkSNj9Dg/ShhZHmi0U/gl0ZYI3b38aX/bUlX/zA1yOtq8K+UV0/ZsonzVpm9UQ3CgI8wh7rLDPZRKUzuA0jSBiPXEaj5ManKbhpfZfWTz8lsR3Hmt37I88ddVjQkA/fRAZ9ZVBx64J/nWWhlNze791/gajCitu6/J64iczWyDqJGk/dWKRCf4pEH1rDTpqq2b6Yx88ntj9uC9c/YkKhG8UBHcZsjcKYe6qkZLMmvrkDQDsCMZz4bbb1O0l0aP9R7vyzj6ke6t2ez2PVjzBc2tzYRXlx21tFI8vbsjGSMCB4cSFc5TMq947jO5xiuh0etjqIt4xgq79O6n5nVYeLNLf9jEQ0MUHaSsCCO0lZDCAR/hpK3ydT5VOIxPUAoBQCgFAKAUAoCE52tjLw+8jX3mt5QBsMt2bY3Ow3xQFN5Qn7SxtW84UG3mFCn+YrBlzQ81ol68NooBQCgKDw8BJ7yEHZLhmHoJVWTGPDvFq5/jMMWRl5r8GvTPHNHyf5JCqYligMQg+8L56qFx8iSD/ADNbXZmrw/XJhy+1zehmsuV5uJnMUqRR20oyXRpNcyqrhdAZe6odTnO58NqveGaPFbsl/csfL/krtZqPbUV2MT8rXNnM8t0VkaQ6I5o9k7MbhAp3Rsgkg5z4E4ONfEtNKqqMa17C6/HzZlpLlObc37RkqhLIUBjubhY1LucAf69AABuSTsANya2VVTtkoQWWYznGC5pEHw/iyzNJIBrc/dJBka1VSQTID/Z6m3OdsKvU7VbWaWVSjXnCW8pds+S88diHC5Tbkt30SLj7H5haNJYSY7SYm5R12UgLHG8SgnP3elSPNW8MVc6TVQvhmPbbcr76ZVSwzqdSjQKAUAoBQCgFAKA+MM7GgOS8kQ/Z1uLE7G0uJI13yTE57WNj8wx/KsJFlo5ZhjyLLXhMFAKAUBQrbv3l9KPdaVYx84olRvnvkfMGqLjUk5Qj3wa9PvOcvU36oyWKAUBavZQcR3i+Iu2P0aCAj+VdloXnTw+BQahYtl8S6XdskqMjqGVhgg/9/WpTSawzSng5XxSyMErwscleh+JT7rf9D6g+VcfrtL/T2uK6PdF7p7vFhnuatQyQSfJluJuILnBEEJlwR/eO3Zo30UTfnXQ8GqSjKz5FXxCbyokt7SuCLiO/QYkhwkpGO/buQG1fsMVkHkFbzqy1tKuolH5oiaezw7EynmbsrmymGxS6jX92XMLDb0fP0qk4PPFzj5r8Fjr4p1p+p2sV0pUCgFAKAUAoBQCgFAc25wt/snFIboDEV6otpTtgXCZMJJ6ksuUH7NeNEjTT5Z4fck6wLYUBXOPPc20ouYcNCw0zxkMcEbLIuncbYViAcBVOMAlfJPCylkj2c0Jcy6dzUk47dzJ90sEQYbTLI1xt5qpjRc+pJHoarreKV17crz5NYM0rJrbCXxyYrSBY1Crk4zkk5JYklix8WJJJ9TXPai2dtjnPqyTXBRjyoy1pMxQCgLD7PpxHdSpn+2RWAx+OIkHfzKuv0j+ddHwa7MHW+38lVr68SU13Oh1dFeUX2j2+l7eb4i0DY9VMiEnwxokA9X+VVfFqeejm7xJmhs5bMeZVa5YuSa9nY/8A2FwfO1iA+ks2f9R+ddPwdrwGvVlPr1/qJ+hfOO2iz208Le7JE6H5MhHgR5+dWxCONQA3DWAHvS3Fu/yC/fN08lRq53h1eNXJeWS11cs0L5HcxXRFUKAUAoBQCgFAKAUBDc3cCW+tZbcnSzDKPv3JVOqN9t9mAPqM0BTeXOJNPF96uieJjFOnTTKuxwPI7MPQ1gy4ot8SGe5K14bhQFP5+sYI7Z3WGNZZXSPtFQBgXcKW1AZJC6sZ8cVjLGMtdCLfGKjst2xFEqAKoCqNgAMAVxdk5Tk5Se5PjFRWEeqwMhQCgPsdy0LpMoJaJhIAOrAZDKMkDLIWX96pvD7/AAr030ezI+pr562vmdA505h+ycNnvYsPpjDRkYIJcqqN6rlgflXYFEcp5e55m4jw+SK5YPcQXEDiTSF1RvMqHIXbIyy7AbMPHJqNrFmifwZu0/8A+sfiStcWX5jXjg4dI14cbW80SqejSHRJGCR03jI/eq94LZvKHz/greIR2Uiy+zTnV+IcNnluMGWDWrlABrUJrD6eikjI8sqenQdAVhCez2zLXtsh3FtbGQn9dgkCfLu9t+Rqo4ZDMrLfN4J2sltGHodeq3IIoBQCgFAKAUAoBQCgKNzvwh4JP6Stoy7BQt1Eg700S50yKPxSR+Geq5GdhXjRtptdcsnm1uUlRZI2DIwyrLuCD41gW8ZKSyjLQyKn7Sk/q0Un6K5hkO+BjUV39O9WM1mDXoyNqVsn5NHlq4lLfDJ7fcxSTEfgY/LScfTVn8q3RpUukl88r+DFya7P7fswniKA4Idf2o5AOuPe06f51n/SWf24fwa/Zh40V1z9DLBdxvsjqx8lYEj6DpWuWnth70X9DNWRl0ZlbPh+X+x/7+lYxcekvqevJIzTJdcFvbIsA8SERqSFJUfexKAT4MpQeiDwIz1+isc6YuXUotRDlseDjXs6J+1FAAQ6d4/CEkjlBGP140H1NY8QnyaeT+RlpY5tR1WuOL0hedLXtLKYeKrr/gIY/wAgasOGT5NTH12I2rjzVMwezJ+z4NebjN1cLagbbgopl+eImc/u10+os8OqU/JFPVHnmkX/ANmegXd5kjtGSEqPHsl1g4+UhbOPNfSonC5J6dY82b9amrS98S4nBbJ2k8qRJ01SMEGfLLHc1YkQiYeae1P9XtLqYfGYxAnX4rhkLfuq1AStlLO39rEiDw0ylzj1HZgA/ImgNygFAKAUAoBQCgPhoCgcU5ZksZHuLNC9u51S2iDJRt9UtuPH1jHX8O+BXjRvovdb9D1Y3kcyLJGwZG6EfzBB3BB2IO4OxrAtYyUllGnzRwz7VaTweLodP7Y7yf5gKJmF0OaDRVuA33b28cn4iuGHTDr3WGPDvA1yOtpdV0o/T5m6iznrTN+ohuPtAY54Ecd9VYfrAH/Wttc7Yv2G/uYSjF9TA1qv4HZP2WyB8kfKj8qkeLY/fhzfFfyjDlj/AGvHz/ySPK93NDd9my9tHOhGFAUh48sG0u2knSXBIwTgeQq00NkJ1uMcrHm/Mg6qMlJN75L3Pwq2lwXgibxy8S5BxjO4yDg/OpLk+mTQc09q1x/R7W/YxyRwyN97Mn3mkZGURJDpV9OSMkA9PA4Q0dFzzKKz9PwHfZDZMrvFuL8N7EmPidzK/UQTW+EfG+iQxhDpPunDePQ1JhoqK3mMUma5aiySw2dB4Fy7ZX9jFcJZx2k0sepWiRUaN91DBlHeU4zg51K2/Wtdj3cJbruex6cy2ZSLHiiXKwS9sLedQGVklVZVJHe0jJ7jY3DA5HUDFVvJbopydSck/Tb/AD8CdmGoiud4f3L37Pbu0Mji4aOS8Xvi5kYO8kbHHdLsezKk6SqYXBQgb4W30uo8aHNhp90yvuq8OWE8nSQQelSTUfaAUAoBQCgFAKAUAoBQFR5l5Rd3a5spFguDuysCYZztjtUG4bb31w3nnbHjWTZXZKDzEplzzPd2m19w24j8O0gAmjO4GdQPd+WSa85SXDWf+yKXwnmS2N9KkBYQXDB11rp0Tt7y9ejEZHrgVV8U0ni1+JHrH8GWnvjGxpdGXGuYLQxzxahjb65Ix8gRW+m3kf8A39MwnHKPfBeUjeWqThbZi5caJYcZ0SOgzIC3wg+751fTo32nJfMrFd5xTIrmhBw+NWurIBGOgGPsZELYJ07kNjAPVBWmOhvk8wt/JseqqS9qH4Ivkfmbh8l/mdBboI9MTZ7ICQkFi7xkadhgZ2G+4zVhVp7Kq8OXMyJZbGctlhHel6DHStLzkyNbiSwmJ+37Pscd/tdOjT+tq2x869jnOx48dylH2R8Na4FwFfs+vYK33ZOSc53bSfIED6bVu8eeMdzDkWSZ45zJDGrW9vIhn06QsZU9iMY1MBsmBjC9ScbYyRGtn4UPEn/lm6uHiPlRUYoVVQqgBVAUDyAGAPyrnJWzk3Jt7lvGCSwkYuV+Cw3nFgrQxyRW0DNKHRWUySkBFZSME4yw28K6XhSn4PNLu9io1zj4mEdLbknh43S3WE+duz256g9YWU9QPyFWhDPn/h64j/8A57+dcdEuAlyn1LgSn6SDpQGWK9vojia3SVRj7y1fBPmTBNjSB+rI59KAk7LiEcvuk5G5VlZHA3AJjcBlzg4yN6A2qAUAoBQCgFAKAUAoCI5n5cg4hbvbTr3W3DLsyOPddT4Ef7g7E0ByIiexmFnfY1/3U49y4XoME9HHQqd/zBPO8Q4c4vxKlt3Xl/wWul1SfsT6kjVKWBafZ64FqYvGGWRfHo7mZevXuyKM+YI8K6aFishGfmvxsU0o8smjT9rPBRd2GkkjRLG+QM4y3Zk4z0CyEn5VI07xPHmeRrU5KLeMnAuIco3URbCa1X8Skbjz0Z1VPw0bLuG31t7ZS7o1+G8z3tsNEF1NGvwrIwUfJc4FYOKfVEHLLbyRwa947P8A1q4ne2iIaRmdiNXQIgJwGI8QNhv1IzhOSrWx7FOTO0W/InDUAAtI8AAYbLbDzDE6vXPWojun5m7kRUuIxRC8nEMaRxRKluqxqEXUuqRyFXbrKFO3VDVXxW3KjB9epO0UPel8jQku5JZfstonbXJ/CPciHxyv0QDy6nYDqK1aPhs7mpT2j92Z36uNaxHdnUOSOVk4dAU1dpNIdc0x6ySH0/Co6AeHzJrqIxUUkinbbeWWKvTwUAoBQCgFAKAUAoBQCgFAKAUBTPaBx3hyxm0uo/tLuMi1jXXJ5BtiOy6+8SvjisZTjFZk8I9jFyeEcvs478ZC9lHHnuJOzTyIvwmRNAfHhnfzJrnNTPQSm2k/lsi2qjqVHDx8+pJ8u8du7G4D3Qia2cBJZIQ4MeCSsjKScqCSDgdGJ8BUrST08k66m0+uH/Bo1EbU+aePkdUuYY54mjOGjlQqcEHKOpGQfUHY1ITcXnyNOfI5jcWzwu0MhHaJjJG2oHOHA+FsZ9DkdQatq5qcco63RapX1p911Od80cuPLfRRW6Ze56KOmsHvE+Qx3ifmawniO7Od4tp1XfmP925+g+VOAx2FtHax76Rlm8Xc+85+p+gwKrpz53khRWEQ3O/PkNiphiImvH7kcMffIc7Auq9NyML1bYDzGVdTlu+h5KaRCcA5Fv7pQbhzaQHJKLhrmUsSWZ392EsTqOMnJPSso6GHO7J7v7L4HstTLl5I7L7nTOAcBt7GLsreJY16nG5Zvidjux9TU0jknQCgFAKAUAoBQCgFAKAUAoBQHwmgOd83c7yPI9nYEak7s11sywt+jjHSSTHXwTxydhE1eshp45l17I30USte3Qq3D+HpCDpyzMdTyOdTyMdyzud2JOTXLanVWaiWZvby7FxVTGtYibVRjcCM7V6m08o8aysMjuCC7sSn2eUvFG7f1eVsq0bfhSQgmPA048NSZ2y2b+PE65YVi6rquz9Stlo5LePYv4FlxeLxLIdwGMc0LeKnSdSZx6q2Adxg1NjKUN49PsR4ylGWU8P6GrDwuy4WwlZ5JJ2QonaOHkZc5IRAAo3xkgADAycUtvbi5T2SM5TstmuZtsrPEGluHd5ZpcOR93HI8aKi6tKAIQWGGOS3vHfA2Ap7eKWZxWsL6slw0Ues92R55ftMYEEY8iqhWHqHHeB9c1GjxDUJ552bXpqmscpdvZ/zQ+v+j7uTVLgtbzN1niUbqx/FKg6+a7+Zrp9Jqo6iHMuvdeRUX0uqWGdAqUaRQCgFAKAUAoBQCgFAKAUAoBQHOOd+ammkewtWZQvdubhdtHj2MZ+Mg95h7g29492DrtZHTw/+n0RI0+ndr9CvW1ukahEUKqjAUbAVyllkrJOU3ll3GKisIyVrMhQCgFAa9zYxyEFl7wGAwJVgPLWpBx6ZqRTqratoS+RqnTCfvI+WlhFESyIAze8xJZjjpl2JYj60u1Vt203k9hTCHuo+8Qm7NDJ4J3m/YHvfkuT9BTTRU58j77L49ha3GPN5GSOUEsPhx9QQCD+eR9Kwsq5Yp+f5R7GWW0YeJWhlUaW0SIwkikHWOVd1YfXr5jNbtHqXp7VLt3ML6VbDB0/knmIX9sJCuiVD2c0fwSr1A/VOzD0IrsIyUkpLoyhlFxeGT9ZHgoBQCgFAKAUAoBQCgFAKApntA5kaIC0tmxcyrkv+ghOQZP2iRpUeeT0U1H1OojRW5y+S8zbTU7JYRSbW2WJAiDCj1ySTuSSepJySfEmuPuulbNzl3L2uChHliZa1GYoBQCgPjE+AJJIAUdWYkBQM+JJA+tbaa3ZNQXcwnNQi5MneL8vCC2EwJMkYDTHUdLL+MqpOFCdR+qpByd6u7dJXKvkit10/76ldXqJKeZdGQlUGGWhJcH5XW+hd5nkWOQFYuydozjdTKSp72T7oOVwATnVt0Gk08aIpte1137fAqtRc7JNLoVjgUbhSH96MC3Y+bwPKjH67GoXEeWMuRebf1wStI3KPM/LH0JSqslnzhXE/6Pu1uukMumK5HkM4jmP7BOD+qT5Vf8I1f+zL5forNdR/uL5nZAavitPtAKAUAoBQCgFAKAUAoCL5l4ylnbvMw1Y7qIOskjbIg9S2PkMk7A15KSisvoepNvCOVQCQlpZmDTSnXIwzjVjAVc7hFHdUeQ8ya5DW6p6izPZdC909Kqhjv3MtQjeKAV6k28I8yaB4lrOmBe0OcF84jX5v+I+i5PnjrUtaXkXNc+VeXd/L9ml3czxDf17G8gONzk+fT+VRZtN5Swbl0J/lDh+uUzH3Y8qvrIQMn91Tj5v+rVvoKeWDm+r6fAgaqzL5UXF1BBBAIOxB3BHkasMkQpicmPq7IuPs421BmEhT4Omx090tqz4jfpF/pK1d4vzx6m/+ol4fJ9y5RRhVCqAqqAAAMAADAAA6ACpLeepoxg5lerpvL1Ntpw22f7yGGTx9Waqzikfbi/Nfgn6J+y16nyqomHmWMMCrAFWBBB6EHYg/SsoycGpR6o8aTWGXD2bcZJjaylbMluB2bHrJb9EPqye43yU/irsdLqVfWpr5/Eob6nXNxLtUo0igFAKAUAoBQCgFAQfGubrK0bRNcIJP0S5kk36fdRgv/KvG0llnqTfQofMPGPt86yBXWGEERLIpQs7DvyFDuNsIuQCO/wDFVDxTWprwq3nzLLR6dp88vkadUJZCgMdoZLhjHaxNOwOGK4WND465j3QR4gam/Vqz03C7bd5eyvX9ES7WQhst2bnNHKqw22m5lM0857JI0ykUYI774HekKJkgudOrR3RmrnwKNHU5pbru+pA8WzUTUcmsiBQABgDYAeArlpzcpOT6suUklhHi4kIHdXU7EIi9NTsQqrnwySMnwGT4Vs01DusUPr8O5rts5IuR0jg/DxbwpCDnSN2xjU5JZ2x4amJP1ronjouhU7vdm5XgFAKHpyC5v0HFb+AnDmRXAPiOyjBx6jH5fI1E4pTJwhYui2JGisipOL6s36oiyFAY3lkidLmEZmhOpVzgSKdniJ8nG3oQp8KsOHarwLcP3X1Iuqp8SG3VHW+DcUiu4UnibKSDI8x4FSPBgQQR4EGutKQ3aAUAoBQCgNTivEI7aGSeVtMcal2PXAAzsPE+lAUqP2mMwDLw640ncant1OD0ypkypx4VDlr9PFtOaN8dNbJZUSs8R5q4lePodJbSEnGmB4ixH68+vWPkir8zUbUcTrUf9KSz65+2xuq0cub20/t+zDZWMcIIjQLncnqWPmzHdj6kmueu1FtzzN5/75FpXVCCxFGxWg2Hh5MEKAWZjhUQamdvJV8dsnyABJwATW+jT2Xy5YL9Guy2NazItXBeRjINd6djuLZG7uPKVxvIfNRhNyDr6102k4dVRv1l5/oqLtXOzZbItXEL23sLfUQscSAKqIoG/RUjRepPQAVPlJJZZGSbeEcwubyW5lNxPs7DSsYOVhj6hFPic7s34iPABQOV4jrfHlyx91fcudLp/Cjl9WearSWTXJvDRLKblt0iLJF0OZfdkf8AdGYx6mQeAq+0VHhVcz6y/BWamznlhdEXapRHFAKAUPSncO5Xhvn4kswwReAxyocPE620HeVvD3hscg+IqwrinWk/IjN4llEFfWE9m4hucEscRzKMJN12/UkwMlPmVJAOOd1/DXU3Ov3fwW2m1Sn7Mup5qpJooD1wPi0nDZzIil7aZszxKMsjH++jUbk/Eo3PUb10PDeILHhWPp0ZV6vSvPPD5nU+Ecat7tS9vMkqjY6GBKnyZeqH0IBq8K436AUAoBQEdzFwlby2mtnJVZUKFl6jPiM0ByDikVxw7TFdIkhwAjW8iM0i50gi2YiXPTOkMB51Q6rhWZOcZJL1/ZZ063ZRkvofbW6kkGexaMf4hUHHmFQt+RIqqnTXXs55+H7JsZyl/bj4m3UU2igNzlVivFLYgDDxTxsfHpHIP5x/zroOCS2nH4MrOIL3WdB5k5hhsYw8pJZjpjjUZeV8Z0qP9ScAeJFXcpKKy+hXJNvCOZ3lzLcyi4uCO0AIRFJKQqeqpnqx/Ex3b0GFHMa/iDvfJHaP5LnTaVVrml1PlVZLCQvI6Qx7SSHSDjOgDdnI8lXf1OkfiFTNFp/Fs36LdmjUW8kNurOlWdqsUaxoMKgCgZzsPMncnzPjV63llWZq8AoBQCgIzkMArduM9+9nOTnfQVi8fLs9P7tWUF7KIz6k9xCxjnjaKVA6MMFW3B8foQdweoNZHhzPj/Lc9iS6a7i18wC80I/XA3mQfEBqA6g4LVT63hcZ+3Vs/LsT9PrHH2Z9PMjYpVYAqwYEZBBBBB6EEeFc/OucNpLBaRlGXRnutZka72g1iWNmimHSWI6Hx1wT0dfRgQfKpum191HR5XkyPbpq7Oq3Jqx5v4kndaS2mA2y0Txvnw1FH09PJRVsuMRSTlBkL+gecKSJCz9oEqzRJcxxiOUsuuIvlWCM4yrZ1AhSNsYOKmaTXw1LaimsGi/TSqSbZ0KpxGFADQHIuc+EXdtfT3SW0l1DcaDmAa5I2VAmgp1ZdtQxsMmq/XaOWpisSxj6ErTahVN5RjtOHX8wBSwmXIzmdooQOh3GouOvw+dVseCzb9qSwS5cQj2RP2Ps/ncZuLoxt8FqqYHzknRi/wBFX/rVhXwrTwW6z8f+CLPW2y6bFc47ZT8Ok03JDwOcRXQGB+xOBtG/kR3W9NwIWt4Ukuen6fokafW59mz6nqOR0ZZI2CyIdSMRqAbBXceIIYg7jYncdaq9LfLT2qX1Jl1Sshj6Efw7iMl8TfTnMrlkUA5WKNXZQkfodOSepNT+Lambs8JdFh/HJG0VMVHn7m/VMTz4zADJOANyT4CvUm3hHjeNy0cicOIQ3TghpgNCnqkA3XbwL++ehwUB3WukqpVNar79/j/wVFljslzduxaazMBQCgFACwG56Dc/KgIX2VMW4bFKQQZpJpt99pLiVh+akH61aoiluoAaA4vdQRrf8QMQQIZ1GEAA1CCIv02zrZs+ufGud41LM4R9C14evZbMlUhYCvVjuCOvIpSQQiEjo6uY3X5KVZWHmCcelT6bKYrGXh9msr8ojzhY30+edxy3xVLOY3XFI5CEZlhkTs2iiVhpy0SnWXbJXPe2boNzV5oZ6VezT1K3UxvftWdDtnEL+K3QyTSJGg6s7BR6bnxqxIhTOIe0hd/s1tJIP0k5+zR/5wZD/AM+dRbdbTX3y/Tc3Q09ku312IY+0G9ZsK9ghycr95Mcf8WPcfLf0qLPiTSyq5Y+hvWj85I27fne/QgyQ20w8RGZIDj01GQE+hIz5isIcYqbxNNHstBNLMXksnB+eLOdhEzmCY9IpwELHyRslJf3GNWddsLI80HlEOcJQeJLBZq2GJhu7VJUaORVdGGGVgGVgeoIOxFAcR4/wSKLiMttbSzJbRRqZI+0JVZXyRHG3vIoTDEA+I8KqeJTrpipKK5m/InaSM7G4tvBuW8CxqERQqqMBQMACubsslZJyk8stYxUVhGSsDI9WHDftlwtuf7JQJZ/VMnRH/6jKc/qo3mKt+G04zdL4L4kHWW/7a+Z06rEhCgFAKAUBXPaJxP7Nw65cEhmjMSY6l5Pu10+o1Z+lbaY5mjGbwiycscO+y2lvb+MUSIfUqoBP1OasCOSdAQHPZuxYXH2IE3GjuY97qNRXzbTqx64oDkPDuI2saiCLVqGwgCOZdXiDFjWWz12rmL9Fq7rW5L59i4r1FEIbMvfAeSWmXtLwvHqwY4YpGQxjrmV0Pfc/D7o6d471babh1VUMSXM++f4IN2rnN7bI2br2djcw3k6nwWRYpVHX9VXP8dZz4bppf24+B5HV2ruRLci8TGQLizPkTHMPqVDn/WtH/h9P6/U2f11noZ+FezN3fXxGdZ0HS3iQxxZ3GWJOqTHUA4wamUaOqj3Fv59zRZfOz3mTtzyJbzzC4upZ7iRc6NUrRpHnGRHHDpCjAA3yT4k1IaT2ZpTwSVtynYRnK2kGr4jGrN/GwLH86JJdD1tvqbU3BbZ07NreFk+Fo0K/wAJGK9PCucQ9nFo2TbmS0br9w3cz6wPmP8AID51ptortWJxTNkLZw91lQ43y3ewKVnt1u4PGS3XJx5vbPv/AAFulVdnC5QfNRLDJkdapLFiyRvBeIsoxZX00QXbsdQkVMbaewnVjHjGMDFa3rtXp9rYZ9f8Ga09Fu8GWCXmXiJUgXKKcYDdgpwcdcasHzryPGpNpcn3D4ese8VXlQO0BmkdpJJ3aVnfq2ThSfLuhdvDNROK289+PJYN+ihy158yZqsJYoCyezlQYrh98tcsDnyRI0AHpsT8ya6aqPLTBen5Ke15sk/UtlZGAoBQCgFAU/jUQ4hxO1s1w0dmwvLjrgOBiBCRtqJJbB/DmpmnhhZNNj3wdEqSaxQCgPOgZzgZxjPp5ZoD1QCgFAKAUAoBQCgFAQvHOVLK83uLaORsY1lcOB6SLhx9DQFE585GtLOxuLmOW7Qxxkqq3MpXUe6uQxJIyR49K1OipvLivojPxJ+bInh9v2UUcfwIq/koFcbqJ89spebZfVR5YJehnrSbBQE/7OZsC6gPvLN2o9Y5UUg/xrKv7tdLRPnphJeWPoVFseW2S+ZcazNYoBQCgK5zpzP9ij0xqJbqTaGHzPQu/wAKL1J2z0yOozSSXNN4SPN28R6mP2Oxf1FpXwbiSeY3D5yXlWRl6+AChQAMDxxvVhBpxTXQjyTTwy91keCgFAKAUAoBQCgFAKAUAoBQCgKL7YJv6nFBjP2i5hjx+qrds2fpHWm+fJVKXkmZ1x5ppepVa4g6IUAoDNw66MEyzqMkAoy/HGSCR1xkEAgnxBGwY1O0Wq8JuMvdf29SPqKOdZXVHQOH8QjnXVGwbHUfiU4zhl6qaulhrK6Fa008M2qHgoCn8e50ALQ2QE0oOlpTvDCfHUwI7Rh8K536kV5ZOFK5rH8u7MoQlY8R+pVrSz0M0ju0s0hzJK/vMfIY2VR0CjAAqj1Wsne99l2RZU0RqW3UuHsokwL2H4LjtANvdlijby+MPv558q6fQz59PF+mPoVGpji2RfalmgUAoBQCgFAKAUAoBQCgFAKAUBzX2oT67yxh8EWadh8gkSHr5u9V/E58unfrhErRx5rUQtckXYoBQCgIu44xAJRErs05yAIGKuPEjtFZdH1YVZ6anVQj4kfZj6/oiW2UyfK93/3uSyX95ju3k6AjoewkI/ekiY5+tZPiUovGE/XD/Zj/AEcX3aMFxE8oxPPPMPheQhTsBvGmlG+oNa58Tufu4XwRnHSVrrv8TJGgUBVAAGwAGAB6AdKgSk5PLeSSkksI+1iekv7Prjs+Iyx+E9srj9qGQqf8sy/w10/B55ocfJ/kqNfHE0/NHTatiCKAUAoBQCgFAKAUAoBQCgFAKA5LzLc9vxG4kGdMSpbL5ZXMkhH70gX5oaoONXe7Wvj+iz4fDrI1aoSyFAa97epEBqyWY4REUu7t8KIu7GpGn01l8sQXz7I1W3RrWZMn+B8iT3WJL8mKLwtYm7zD/HlX/lQ48ydxXS6Xh9VG73fm/wCCpu1U7Nlsi433KNjNAtu9tF2Se4qqEKHzRlwUPqDmrAinPOYeA3PDAZCWuLMbmXGZoB/iqP7VB8QGRvkeJp9ZwqFntVbPy7Mn0a1x9mfQwRyBgGUggjIIOQQfEEda5yUXF4ksMtU01lHqsT0UAtLrsLu0n8FmET/sTgxb/JzGfpVzwazFrh5r8EDXxzBS8jsgrpCpFAKAUAoBQCgFAKAUAoBQGG6ukiUvI6og3LOwUAerHYUBUuMe0S2RG+zB7qTGF7JT2ZY7LmZsJpzjOksQN8VpnfXD3pI2RqnLoikWcJRAGbU+7O+Ma5GJZ2I9WJP1rkNTc7rXPzL2qtVwUUZqjmw82kUtzKYLVQ8gxrds9nCD0MhHU+Sjc+g3FpouGyu9qe0fuyHqNXGvaPU6HyvyhDZfeE9rcMMPcOBqI+FANo0z+EfUk7101dca48sVhFROcpvMix1mYigPhFAcx5q5Oaz1XNkmqD3pbRBuvm8A/mU8d8b7VA1uhhqFnpLzJOn1LqeOxCWd2kyLJGwZGGQR/wB7H08K5W2qVUnCaw0XMJqceZGatZma3ErXtonjzgspAPk34T9Dg/St+mt8K2M/Jmu2HPBxOqcn8Y+2WcM52dlxIvwyqdMi/Rwa7VNNZRz2MEzXoFAKAUAoBQCgNaS/hUlWlRSOoLqCPoTQHn+lIP00f8a/70Bp8V5mtLaJpZZ4wq+TBiSdgFVcliT4CgKFxPnu5udoWS0i82Mck7fTJjh/zn5VV6jiKhtXFyf2JlWk5lmTwQLxws2uR+2cZIeeTtWGeukuTo+S4FU92r1VvXKXkifXRTDpg2hcIdg65/aH+9QnXPq0yQpR7GStZkYWBkmt7YFk+0SdmZVAJjGlmOM/iIUgdQOuDjBtOGaWN1mZdF28/wDgiau51w9nudd4TwuK1iWGFAiL4DJyT1Zid2YnckkkmuoSwUpu16BQCgFADQHLecuX0sZ1uIjpiu5dDxY2Wco8naJ5BhGwYeek+dVXFdMrKufvH8E3RXOM+V9GRtcuXAoDLwe8msyxtnCq7a2ica42Y+8cZDIT5qQM7kGrfTcWsrxGayvoyFbooT3jsy2cM9ocBYJdIbZicB2OuFifATADT/6ip6Zq90+rqvXsP5dystonX7yLkrZ3FSTUfaAUAoBQCgOS82whr+cFlX3Tlum0abfPGfn0rwEe/DkGR20ZwNiCME5HmRjYk+PTxJwAK7f8LV74IZkIERYEe7ECG3ZumSygH0x51o1Ck44Rtqxnc8DhCsCVu4MhlQKpDEnfV0PgSg/i8hmL4cYpZe5t5m+h5j4PhnV54hpYgEsveALKSN/Nds46jOAc1g0n02Msn0WoiniUSJJko2YySAdWNJyOoxn6itF+0Jb9jZVvJFnurlIl1SOqL5sQB/OqOumyx4gmyylOMerJTk3g893cw3JjaK2gPao0ilHnkKMi6UPeWMBycsBqJGBjJrpOHaF6fMp9X9ip1WpVuIx6HVatCGKAUAoBQCgKn7TLB5bLVHGZGgkjn0KMswRu9oHxaCxHnjHjWu6vxK5Q80Z1y5ZKRz+xvo5l1RuGHp1HoV6qfnXG3aeyp4msfgvoWwmsxZsVoNhhlhJ3V2U/Rh9VP/Qit8LktpxTX0f1/ZrlF9U8GC3nLEwzKuvTnbdZE6EgHpucFTnGRuQQa2WVqK8apvH3T9f4ZjGWXyTW/wCSd5D42bS7i4eWZobhXMKk6uxeNdTKCd+zZc4H4SNtjt0PDdVK+t8/Vd/Mq9XSqpez0Z1SrEiCgFAKAUBWeK8lw3ErzNJKGfBIUpjZQu2VJ8KA1f8A8eW/6Wb80/8AhXmAal/7K7KcASNK2OhygI+TBcimAULn72cpwuBrq2uZCg3MUyq+T6OunH5E+tYTqjPqZRm49ChcuXUt5MIQUjypOrQW6Y8NQ861/wBLAz8aR2Lg3shTCvPezOchgIVWAYG+Ce831DA/61mqK12MXZLzLpwrkvh9sweO1j7QHIkcdpID59pJlgfrWxJLZGLbfUn69PBQCgFAKAUAoBQFf43yXY3bF5YF7Q/3seYpP+JGQx+ua8aTWGeptdCuXHsydcfZ+IzKM9J447gY32z3G8upPQ+e0SzQaefWK+WxvjqrY9yK/wDB95/56P8A9p/99af/ABWm8vuZf11vmbFl7L+3YTXN/OWXur9mC24C7Fgd3JyQPEdBUmrS1VQ5Yx2+pqnfOb5my18s8kWti5lj7SSUjT2s8hlcL10qT7oPjgb1vjGMV7Kwa3Jvqyy1keCgFAKAUB//2Q==\"\r\n            }\r\n        }\r\n    ],\r\n    \"respondent\": {\r\n        \"name\": \"John Doe\",\r\n        \"email\": \"john@you.com\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/surveys/questionnaires",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"surveys",
+								"questionnaires"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Take Survey Question type Image",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"questionnaire_id\": \"50c959c5-5fee-4203-a038-92dd9c09230b\",\r\n    \"responses\": [\r\n        {\r\n            \"question_id\": \"f4a26b07-4564-48e0-ab88-014375ff5bb8\",\r\n            \"answer_id\": \"69c84756-c7aa-4795-a839-f1b8cf9aafe9\",\r\n            \"meta\": {\r\n                \"value\": \"data:image/jpeg;base64,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\"\r\n            }\r\n        }\r\n    ],\r\n    \"respondent\": {\r\n        \"name\": \"John Doe\",\r\n        \"email\": \"john@you.com\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/surveys/questionnaires",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"surveys",
+										"questionnaires"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": [],\n    \"message\": \"Thank you for the survey !\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@sommalife.com\",\r\n    \"password\": \"p@$$W0rd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/v1/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@sommalife.com\",\r\n    \"password\": \"p@$$W0rd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"token\": \"10|vHN2cOQrAB6EvWbVNC6419IHthhfpAFxwP7Rhtygae455472\",\n        \"user\": {\n            \"id\": \"dc0cd53a-dab8-4fd2-b520-e30165efe29e\",\n            \"name\": \"Administrator\",\n            \"email\": \"admin@sommalife.com\",\n            \"email_verified_at\": \"2024-06-15 01:10:18 pm\"\n        }\n    },\n    \"message\": \"User login successfully\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "10|vHN2cOQrAB6EvWbVNC6419IHthhfpAFxwP7Rhtygae455472"
+		}
+	]
+}
