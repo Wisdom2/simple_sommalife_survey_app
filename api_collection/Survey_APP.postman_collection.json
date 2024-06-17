@@ -128,7 +128,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"title\": \"Hello checkbox\",\r\n    \"description\": \"some random info\"\r\n}",
+									"raw": "{\r\n    \"title\": \"Questionnaire title\",\r\n    \"description\": \"some random info\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -332,7 +332,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"questionnaire_id\": \"1d3298a1-589c-4165-9e41-546e8a509f2b\",\r\n    \"question\": \"Select option\",\r\n    \"question_type_id\": \"914d0da5-6a7e-4da1-a927-0d5859ba761d\",\r\n    \"answers\": [\"Warm\", \"Cold\", \"humid\", \"normal\"]\r\n}\r\n",
+									"raw": "{\r\n    \"questionnaire_id\": \"f62ef4db-467f-40c5-a719-331fdb1665b3\",\r\n    \"question\": \"Select option\",\r\n    \"question_type_id\": \"9f67e93f-928b-4d71-ba3d-1ec2f6ff9b71\",\r\n    \"answers\": [\"Warm\", \"Cold\", \"humid\", \"normal\"]\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -548,7 +548,7 @@
 							"variable": [
 								{
 									"key": "questionnaire-id",
-									"value": "d47b02cf-7d98-4907-8c3b-4b73592ee64c"
+									"value": "f62ef4db-467f-40c5-a719-331fdb1665b3"
 								}
 							]
 						}
@@ -624,15 +624,135 @@
 							"variable": [
 								{
 									"key": "survey-id",
-									"value": "943cf781-ba04-48a6-816b-45f96d25ecb3"
+									"value": "9d62a5ee-d0fd-4713-88cf-e428e7c6c68f"
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get Survey Result",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/surveys/:survey-id",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"surveys",
+										":survey-id"
+									],
+									"variable": [
+										{
+											"key": "survey-id",
+											"value": "9d62a5ee-d0fd-4713-88cf-e428e7c6c68f"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"id\": \"9d62a5ee-d0fd-4713-88cf-e428e7c6c68f\",\n        \"questionnaire\": {\n            \"id\": \"f62ef4db-467f-40c5-a719-331fdb1665b3\",\n            \"title\": \"Questionnaire title\",\n            \"description\": \"some random info\",\n            \"questions\": [\n                {\n                    \"id\": \"562892ae-2a96-49dd-8bf2-cbf1e09ef833\",\n                    \"question\": \"Select option\",\n                    \"created_at\": \"2024-06-17 09:30:43 am\",\n                    \"updated_at\": \"2024-06-17 09:30:43 am\",\n                    \"type\": {\n                        \"id\": \"9f67e93f-928b-4d71-ba3d-1ec2f6ff9b71\",\n                        \"type\": \"radio\",\n                        \"display_name\": \"Single Choice\"\n                    },\n                    \"answers\": [\n                        {\n                            \"answer\": {\n                                \"id\": \"708162ac-983f-4925-a8cd-8c80dd17e327\",\n                                \"answer\": \"Warm\"\n                            },\n                            \"response\": {\n                                \"id\": \"96263567-f59a-4561-9463-c72029b5afeb\",\n                                \"value\": \"Warm\"\n                            }\n                        },\n                        {\n                            \"answer\": {\n                                \"id\": \"34387188-e50c-496b-bbd8-c5777d0e48d4\",\n                                \"answer\": \"Cold\"\n                            }\n                        },\n                        {\n                            \"answer\": {\n                                \"id\": \"7f993aed-0033-4416-8333-1d66c14499b7\",\n                                \"answer\": \"humid\"\n                            },\n                            \"response\": {\n                                \"id\": \"1323d7b7-2eff-4ee5-838c-e3b62366f2d2\",\n                                \"value\": \"humid\"\n                            }\n                        },\n                        {\n                            \"answer\": {\n                                \"id\": \"637e5575-e175-491f-a7dc-72ea894f670e\",\n                                \"answer\": \"normal\"\n                            }\n                        }\n                    ]\n                }\n            ]\n        },\n        \"respondent\": {\n            \"name\": \"Sammy\",\n            \"email\": \"sammy@you.com\"\n        }\n    },\n    \"message\": \"Questionnaire retrieved successfully\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Take Survey",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"questionnaire_id\": \"f62ef4db-467f-40c5-a719-331fdb1665b3\",\r\n    \"responses\": [\r\n        {\r\n            \"question_id\": \"562892ae-2a96-49dd-8bf2-cbf1e09ef833\",\r\n            \"answer_id\": [\r\n                // \"708162ac-983f-4925-a8cd-8c80dd17e327\"\r\n                \"7f993aed-0033-4416-8333-1d66c14499b7\"\r\n            ]\r\n        }\r\n        \r\n    ],\r\n    \"respondent\": {\r\n        \"name\": \"Sammy\",\r\n        \"email\": \"sammy@you.com\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/surveys/questionnaires",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"surveys",
+								"questionnaires"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Take Survey",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"questionnaire_id\": \"1d3298a1-589c-4165-9e41-546e8a509f2b\",\r\n    \"responses\": [\r\n        {\r\n            \"question_id\": \"f7f696bf-425f-4384-96bc-9aca7615608d\",\r\n            \"answer_id\": [\r\n                \"a5843e13-faa8-48ce-873a-1ade85ef5867\",\r\n                \"78021c00-f43e-412e-b4b6-378850ac8ed5\",\r\n                \"aaf44032-0bca-447c-98fd-4f10d3ffb27f\"\r\n            ]\r\n        },\r\n        {\r\n            \"question_id\": \"9bb3b496-1f3d-4ef9-94ef-5356d0bf6979\",\r\n            \"answer_id\": \"23d7b01c-4419-4881-9a7d-fc920e5c3dee\",\r\n            \"meta\": {\r\n                \"value\": \"Cool things\"\r\n            }\r\n        }\r\n    ],\r\n    \"respondent\": {\r\n        \"name\": \"Dr. Strange\",\r\n        \"email\": \"john@you.com\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/v1/surveys/questionnaires",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"surveys",
+										"questionnaires"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": [],\n    \"message\": \"Thank you for the survey !\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Take Survey Copy",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -694,7 +814,6 @@
 								{
 									"key": "Content-Type",
 									"value": "application/json",
-									"name": "Content-Type",
 									"description": "",
 									"type": "text"
 								}
@@ -883,7 +1002,7 @@
 	"variable": [
 		{
 			"key": "token",
-			"value": "10|vHN2cOQrAB6EvWbVNC6419IHthhfpAFxwP7Rhtygae455472"
+			"value": "1|onUiDPWFvsn1fQgvzSWSOikERbxSi1PP5A5tvhA3bd115da2"
 		}
 	]
 }
