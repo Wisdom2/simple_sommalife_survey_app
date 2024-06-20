@@ -30,13 +30,15 @@ class QuestionController extends Controller
      */
     public function store(CreateQuestionRequest $request)
     {
-        DB::beginTransaction();
-
         $questionnaire = Questionnaire::whereUuid($request->questionnaire_id)->first();
-
+    
         $questionType = QuestionType::whereUuid($request->question_type_id)->first();
 
         $this->ensureValidQuestionTypeformat($questionType);
+
+        $this->ensureNoDuplicateQuestion($questionnaire, $questionType);
+
+        DB::beginTransaction();
 
         try {
           
@@ -111,6 +113,20 @@ class QuestionController extends Controller
             ]);
 
         }
+
+    }
+
+    private function ensureNoDuplicateQuestion(Questionnaire $questionnaire, QuestionType $type)
+    {
+        $question = Question::where('questionnaire_id', $questionnaire->id)
+                            ->where('question_type_id', $type->id)
+                            ->where('question', request('question') )
+                            ->first();
+
+        throw_if(
+            ! blank( $question ) ,
+                new CustomException(message: 'Question already exist', status: 422)
+        );
 
     }
 
